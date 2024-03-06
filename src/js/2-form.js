@@ -28,11 +28,18 @@ form.addEventListener("submit", (event) => {
 
     if (email.length && message.length) {
         const formData = {
-            email: event.target.elements.email.value,
-            message: event.target.elements.message.value,
+            email: event.target.elements.email.value.trim(),
+            message: event.target.elements.message.value.trim(),
         };
         console.log(formData);
         form.reset();
         localStorage.removeItem(localStorageKey);   
+    } else {
+        if (!email.length) {
+            alert("Fill Email")
+        }
+        if (!message.length) {
+            alert("Fill Message")
+        }
     }
 });

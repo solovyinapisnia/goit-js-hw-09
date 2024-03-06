@@ -77,9 +77,6 @@ images.forEach((image) => {
     const aElement = document.createElement("a");
     aElement.classList.add("gallery-link");
     aElement.href = image.original;
-    aElement.addEventListener("click", (event) => {
-        event.preventDefault();
-    });
     const imgElement = document.createElement("img");
     imgElement.classList.add("gallery-image");
     imgElement.src = image.preview;
